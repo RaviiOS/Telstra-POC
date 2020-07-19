@@ -14,11 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Set country DetailsViewcontroller as root.
+        // Set HomeViewController as root vc.
         setupRootVC()
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication){
+    }
+}
 
+//MARK:- Custom Methods
+extension AppDelegate {
     private func setupRootVC() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC = HomeViewController()
@@ -26,5 +35,7 @@ var window: UIWindow?
         window?.rootViewController = rootNC
         window?.makeKeyAndVisible()
     }
+
 }
+
 
