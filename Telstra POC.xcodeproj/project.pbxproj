@@ -20,9 +20,12 @@
 		45AE873824C3145200A0525F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE873724C3145200A0525F /* Constants.swift */; };
 		45AE873E24C3404900A0525F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE873D24C3404900A0525F /* String+Extension.swift */; };
 		45AE874224C348A800A0525F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874124C348A800A0525F /* UIViewController+Extension.swift */; };
-		45AE874424C3534E00A0525F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874324C3534E00A0525F /* HomeViewModel.swift */; };
 		45AE874624C355D600A0525F /* CountryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874524C355D600A0525F /* CountryDetailCell.swift */; };
 		45AE874824C37E0500A0525F /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874724C37E0400A0525F /* Connectivity.swift */; };
+		45AE874A24C408B000A0525F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874924C408AF00A0525F /* HTTPClient.swift */; };
+		45AE874C24C4139B00A0525F /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874B24C4139B00A0525F /* HttpClientTests.swift */; };
+		45AE874E24C414D000A0525F /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874D24C414CF00A0525F /* MockURLSession.swift */; };
+		45AE875124C417FA00A0525F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE875024C417FA00A0525F /* HomeViewModel.swift */; };
 		5864938C67DA03DF4449BEDE /* Pods_Telstra_POCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35369F69F8D10AA045693549 /* Pods_Telstra_POCTests.framework */; };
 		D2AD55FDE74E1EA43F35D082 /* Pods_Telstra_POC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6249D1618B52D47FDF3888 /* Pods_Telstra_POC.framework */; };
 		E7EE12B352FB80C6416E398F /* Pods_Telstra_POC_Telstra_POCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D59D932ACD87F6A08598BD /* Pods_Telstra_POC_Telstra_POCUITests.framework */; };
@@ -69,9 +72,12 @@
 		45AE873724C3145200A0525F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45AE873D24C3404900A0525F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		45AE874124C348A800A0525F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		45AE874324C3534E00A0525F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = "Telstra POC/Helper/HomeViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		45AE874524C355D600A0525F /* CountryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailCell.swift; sourceTree = "<group>"; };
 		45AE874724C37E0400A0525F /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		45AE874924C408AF00A0525F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		45AE874B24C4139B00A0525F /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
+		45AE874D24C414CF00A0525F /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		45AE875024C417FA00A0525F /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		703F6F4F12424BB9EEF1B920 /* Pods-Telstra POC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telstra POC.release.xcconfig"; path = "Target Support Files/Pods-Telstra POC/Pods-Telstra POC.release.xcconfig"; sourceTree = "<group>"; };
 		9003123297170C4E9789F9E3 /* Pods-Telstra POC-Telstra POCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telstra POC-Telstra POCUITests.release.xcconfig"; path = "Target Support Files/Pods-Telstra POC-Telstra POCUITests/Pods-Telstra POC-Telstra POCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9A8FE83AAA4A76C91559EC85 /* Pods-Telstra POCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telstra POCTests.release.xcconfig"; path = "Target Support Files/Pods-Telstra POCTests/Pods-Telstra POCTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,7 +142,7 @@
 				45AE871A24C2F6CA00A0525F /* Model */,
 				45AE871124C2F6C900A0525F /* View */,
 				45AE870D24C2F6C900A0525F /* ViewController */,
-				45AE872724C2F77000A0525F /* ViewModel */,
+				45AE874F24C417FA00A0525F /* ViewModel */,
 				45AE871C24C2F6CA00A0525F /* Helper */,
 				45AE871224C2F6C900A0525F /* Network */,
 				45AE870F24C2F6C900A0525F /* Services */,
@@ -153,6 +159,7 @@
 			children = (
 				45AE86B824C2C6FD00A0525F /* Telstra_POCTests.swift */,
 				45AE86BA24C2C6FD00A0525F /* Info.plist */,
+				45AE874B24C4139B00A0525F /* HttpClientTests.swift */,
 			);
 			path = "Telstra POCTests";
 			sourceTree = "<group>";
@@ -195,6 +202,8 @@
 			children = (
 				45AE873224C30BBE00A0525F /* APIManager.swift */,
 				45AE874724C37E0400A0525F /* Connectivity.swift */,
+				45AE874924C408AF00A0525F /* HTTPClient.swift */,
+				45AE874D24C414CF00A0525F /* MockURLSession.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -217,20 +226,20 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		45AE872724C2F77000A0525F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				45AE874324C3534E00A0525F /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		45AE873624C3144100A0525F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				45AE873724C3145200A0525F /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		45AE874F24C417FA00A0525F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				45AE875024C417FA00A0525F /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F38D077E0CE75D687BB1C8C1 /* Pods */ = {
@@ -496,12 +505,14 @@
 			files = (
 				45AE86A224C2C6F500A0525F /* AppDelegate.swift in Sources */,
 				45AE874224C348A800A0525F /* UIViewController+Extension.swift in Sources */,
+				45AE874A24C408B000A0525F /* HTTPClient.swift in Sources */,
 				45AE873324C30BBE00A0525F /* APIManager.swift in Sources */,
+				45AE874E24C414D000A0525F /* MockURLSession.swift in Sources */,
 				45AE872924C2FC7200A0525F /* CountryDetails.swift in Sources */,
 				45AE872624C2F6CA00A0525F /* Country.swift in Sources */,
 				45AE874624C355D600A0525F /* CountryDetailCell.swift in Sources */,
-				45AE874424C3534E00A0525F /* HomeViewModel.swift in Sources */,
 				45AE871E24C2F6CA00A0525F /* CountryDetailsService.swift in Sources */,
+				45AE875124C417FA00A0525F /* HomeViewModel.swift in Sources */,
 				45AE874824C37E0500A0525F /* Connectivity.swift in Sources */,
 				45AE871D24C2F6CA00A0525F /* HomeViewController.swift in Sources */,
 				45AE873E24C3404900A0525F /* String+Extension.swift in Sources */,
@@ -513,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45AE874C24C4139B00A0525F /* HttpClientTests.swift in Sources */,
 				45AE86B924C2C6FD00A0525F /* Telstra_POCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
