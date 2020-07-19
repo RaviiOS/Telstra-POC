@@ -9,20 +9,27 @@
 import UIKit
 
 extension UIViewController {
-    func showAlertWithAction(title: String?, message: String?, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        for (index, title) in actionTitles.enumerated() {
-            let action = UIAlertAction(title: title, style: .default, handler: actions[index])
-            alert.addAction(action)
-        }
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     func showAlert(title: String?, message: String?) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertVC.addAction(okAction)
         self.present(alertVC, animated: true, completion: nil)
     }
+    
+    public func showAlertWithActions(title: String,
+                          message: String,
+                          alertStyle:UIAlertController.Style,
+                          actionTitles:[String],
+                          actionStyles:[UIAlertAction.Style],
+                          actions: [((UIAlertAction) -> Void)]){
+
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: alertStyle)
+        for(index, indexTitle) in actionTitles.enumerated(){
+            let action = UIAlertAction(title: indexTitle, style: actionStyles[index], handler: actions[index])
+            alertController.addAction(action)
+        }
+        self.present(alertController, animated: true)
+    }
+
     
 }

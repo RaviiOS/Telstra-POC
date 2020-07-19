@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
     
     lazy var countryDetailsTableview: UITableView = {
         let table = UITableView()
-        table.backgroundColor = .lightGray
         table.translatesAutoresizingMaskIntoConstraints = false
         table.separatorStyle = .none
         table.estimatedRowHeight = 160
@@ -24,6 +23,14 @@ class HomeViewController: UIViewController {
         table.dataSource = self
         table.delegate = self
         return table
+    }()
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.tintColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresh.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        return refresh
     }()
     
     let viewModel = HomeViewModel()
@@ -40,25 +47,46 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     private func setUpNavigation() {
-     navigationItem.title = ""
-        self.navigationController?.navigationBar.barTintColor = .blue
-     self.navigationController?.navigationBar.isTranslucent = false
+        navigationItem.title = ""
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.7254902124, green: 0.3861529063, blue: 0.056381469, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     private func prepareViewModelObserver() {
         self.viewModel.countryValueDidChanges = { (finished, countryName) in
-                self.reloadTableView(countryName: countryName)
+                self.navigationItem.title = countryName
+                self.reloadTableView()
         }
     }
     
-    private func reloadTableView(countryName: String) {
+    private func reloadTableView() {
         DispatchQueue.main.async {
-            self.navigationItem.title = countryName
             self.countryDetailsTableview.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    private func setupRefereshData() {
+        countryDetailsTableview.addSubview(refreshControl) // not required when using UITableViewController
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+       // Code to refresh table view
+        if Connectivity.sharedInstance.isReachable{
+            viewModel.fetchData()
+        }else{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.refreshControl.endRefreshing()
+            }
+            self.showNetworkAlert()
+
         }
     }
 
+    private func showNetworkAlert(){
+        self.showAlert(title: Constants.NETWORK_ERROR_ALERT_TITLE, message: Constants.NETWORK_ERROR_ALERT_MESSAGE)
+    }
 
 }
 //MARK:- Prepare UI
@@ -68,6 +96,7 @@ extension HomeViewController {
         setUpNavigation()
         prepareTableView()
         prepareViewModelObserver()
+        setupRefereshData()
     }
     
     func prepareTableView() {

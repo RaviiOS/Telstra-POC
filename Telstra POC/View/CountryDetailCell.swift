@@ -23,6 +23,7 @@ class CountryDetailCell: UITableViewCell {
     
     
     private func setupView() {
+        self.selectionStyle = .none
         let marginGuide = contentView.layoutMarginsGuide
         
         //imageView
@@ -49,7 +50,6 @@ class CountryDetailCell: UITableViewCell {
         detailLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         detailLabel.topAnchor.constraint(equalTo: titleLable.bottomAnchor).isActive = true
         detailLabel.numberOfLines = 0
-        detailLabel.font = UIFont(name: "Avenir-Book", size: 12)
         detailLabel.textColor = UIColor.lightGray
     }
     
@@ -57,7 +57,7 @@ class CountryDetailCell: UITableViewCell {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
         img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
-        img.layer.cornerRadius = 35
+        img.layer.cornerRadius = 30
         img.clipsToBounds = true
         return img
     }()
@@ -65,19 +65,18 @@ class CountryDetailCell: UITableViewCell {
     lazy var titleLable:UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .black
+//        label.textColor = .systemGray
         label.numberOfLines = 0
+        label.clipsToBounds = true
         label.lineBreakMode = .byWordWrapping
-        label.sizeToFit()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var detailLabel:UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont(name: "Avenir-Book", size: 14)
         label.textColor =  .lightGray
-        //      label.backgroundColor =
         label.layer.cornerRadius = 5
         label.clipsToBounds = true
         label.numberOfLines = 0
@@ -90,15 +89,9 @@ class CountryDetailCell: UITableViewCell {
     var countryDetails: CountryDetails? {
         didSet {
             guard let countryItem = countryDetails else {return}
-            if let name = countryItem.title {
-                titleLable.text = name
-            }
-            if let image = countryItem.imageHref {
-                symbolicImageView.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder.png"))
-            }
-            if let jobTitle = countryItem.description {
-                detailLabel.text = " \(jobTitle) "
-            }
+            titleLable.text = countryItem.title ?? "- -"
+            detailLabel.text = countryItem.description ?? "- - -"
+            symbolicImageView.sd_setImage(with: URL(string: countryItem.imageHref ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder"))
         }
     }
         

@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     static let DEFAULT_ALERT_TITLE = ""
     static let DEFAULT_ALERT_MESSAGE = ""
-    static let ERROR_ALERT_TITLE = "ERROR!"
+    static let NETWORK_ERROR_ALERT_TITLE = "Network Error!"
+    static let NETWORK_ERROR_ALERT_MESSAGE = "Please check your network connection and try again!"
     static let GENERIC_ERROR_MESSAGE = "Something went wrong, please try again!"
 }

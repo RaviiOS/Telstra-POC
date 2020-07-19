@@ -22,6 +22,7 @@
 		45AE874224C348A800A0525F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874124C348A800A0525F /* UIViewController+Extension.swift */; };
 		45AE874424C3534E00A0525F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874324C3534E00A0525F /* HomeViewModel.swift */; };
 		45AE874624C355D600A0525F /* CountryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874524C355D600A0525F /* CountryDetailCell.swift */; };
+		45AE874824C37E0500A0525F /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE874724C37E0400A0525F /* Connectivity.swift */; };
 		5864938C67DA03DF4449BEDE /* Pods_Telstra_POCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35369F69F8D10AA045693549 /* Pods_Telstra_POCTests.framework */; };
 		D2AD55FDE74E1EA43F35D082 /* Pods_Telstra_POC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6249D1618B52D47FDF3888 /* Pods_Telstra_POC.framework */; };
 		E7EE12B352FB80C6416E398F /* Pods_Telstra_POC_Telstra_POCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D59D932ACD87F6A08598BD /* Pods_Telstra_POC_Telstra_POCUITests.framework */; };
@@ -70,6 +71,7 @@
 		45AE874124C348A800A0525F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		45AE874324C3534E00A0525F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = "Telstra POC/Helper/HomeViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		45AE874524C355D600A0525F /* CountryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailCell.swift; sourceTree = "<group>"; };
+		45AE874724C37E0400A0525F /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		703F6F4F12424BB9EEF1B920 /* Pods-Telstra POC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telstra POC.release.xcconfig"; path = "Target Support Files/Pods-Telstra POC/Pods-Telstra POC.release.xcconfig"; sourceTree = "<group>"; };
 		9003123297170C4E9789F9E3 /* Pods-Telstra POC-Telstra POCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telstra POC-Telstra POCUITests.release.xcconfig"; path = "Target Support Files/Pods-Telstra POC-Telstra POCUITests/Pods-Telstra POC-Telstra POCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9A8FE83AAA4A76C91559EC85 /* Pods-Telstra POCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telstra POCTests.release.xcconfig"; path = "Target Support Files/Pods-Telstra POCTests/Pods-Telstra POCTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				45AE873224C30BBE00A0525F /* APIManager.swift */,
+				45AE874724C37E0400A0525F /* Connectivity.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				45AE874624C355D600A0525F /* CountryDetailCell.swift in Sources */,
 				45AE874424C3534E00A0525F /* HomeViewModel.swift in Sources */,
 				45AE871E24C2F6CA00A0525F /* CountryDetailsService.swift in Sources */,
+				45AE874824C37E0500A0525F /* Connectivity.swift in Sources */,
 				45AE871D24C2F6CA00A0525F /* HomeViewController.swift in Sources */,
 				45AE873E24C3404900A0525F /* String+Extension.swift in Sources */,
 				45AE873824C3145200A0525F /* Constants.swift in Sources */,

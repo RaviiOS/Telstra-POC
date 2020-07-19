@@ -40,7 +40,6 @@ class APIManager {
         let url = APIManager.networkEnviroment.rawValue + EndPoints.fetchCountryDetails.rawValue
         AF.request(url, method: .get,parameters: nil, encoding: JSONEncoding.default)
             .responseString { (response) in
-                print(response)
                 switch response.result {
                 case .success(let string):
                     let country = string.parse(to: Country.self)

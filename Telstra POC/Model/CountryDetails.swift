@@ -27,5 +27,4 @@ struct CountryDetails: Decodable {
         imageHref = try values.decodeIfPresent(String.self, forKey: .imageHref)
     }
 
-
 }
