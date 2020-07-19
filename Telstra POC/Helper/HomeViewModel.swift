@@ -25,11 +25,8 @@ class HomeViewModel: HomeViewModelProtocol {
     }
     
     func fetchData() {
-        APIManager.shared().getCountryDetails { (country, error) in
-            guard let country = country else{
-                debugPrint("Something went wrong ==>  \(error?.localizedDescription ?? "")")
-                return
-            }
+        APIManager.shared().fetchCountryDetails { (country, errorMessage) in
+            guard let country = country else {return}
             self.country = country
         }
     }
