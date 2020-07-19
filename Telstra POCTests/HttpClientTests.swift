@@ -43,5 +43,5 @@ class HttpClientTests: XCTestCase {
       XCTAssertNil(responseError)
       XCTAssertEqual(statusCode, 200)
     }
-
+    
 }

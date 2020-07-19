@@ -13,7 +13,6 @@
 		45AE86B924C2C6FD00A0525F /* Telstra_POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE86B824C2C6FD00A0525F /* Telstra_POCTests.swift */; };
 		45AE86C424C2C6FD00A0525F /* Telstra_POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE86C324C2C6FD00A0525F /* Telstra_POCUITests.swift */; };
 		45AE871D24C2F6CA00A0525F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE870E24C2F6C900A0525F /* HomeViewController.swift */; };
-		45AE871E24C2F6CA00A0525F /* CountryDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE871024C2F6C900A0525F /* CountryDetailsService.swift */; };
 		45AE872624C2F6CA00A0525F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE871B24C2F6CA00A0525F /* Country.swift */; };
 		45AE872924C2FC7200A0525F /* CountryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE872824C2FC7200A0525F /* CountryDetails.swift */; };
 		45AE873324C30BBE00A0525F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AE873224C30BBE00A0525F /* APIManager.swift */; };
@@ -65,7 +64,6 @@
 		45AE86C324C2C6FD00A0525F /* Telstra_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telstra_POCUITests.swift; sourceTree = "<group>"; };
 		45AE86C524C2C6FD00A0525F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45AE870E24C2F6C900A0525F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		45AE871024C2F6C900A0525F /* CountryDetailsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryDetailsService.swift; sourceTree = "<group>"; };
 		45AE871B24C2F6CA00A0525F /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		45AE872824C2FC7200A0525F /* CountryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetails.swift; sourceTree = "<group>"; };
 		45AE873224C30BBE00A0525F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				45AE874F24C417FA00A0525F /* ViewModel */,
 				45AE871C24C2F6CA00A0525F /* Helper */,
 				45AE871224C2F6C900A0525F /* Network */,
-				45AE870F24C2F6C900A0525F /* Services */,
 				45AE873624C3144100A0525F /* Constants */,
 				45AE86AA24C2C6FC00A0525F /* Assets.xcassets */,
 				45AE86AC24C2C6FC00A0525F /* LaunchScreen.storyboard */,
@@ -179,14 +176,6 @@
 				45AE870E24C2F6C900A0525F /* HomeViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		45AE870F24C2F6C900A0525F /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				45AE871024C2F6C900A0525F /* CountryDetailsService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		45AE871124C2F6C900A0525F /* View */ = {
@@ -511,7 +500,6 @@
 				45AE872924C2FC7200A0525F /* CountryDetails.swift in Sources */,
 				45AE872624C2F6CA00A0525F /* Country.swift in Sources */,
 				45AE874624C355D600A0525F /* CountryDetailCell.swift in Sources */,
-				45AE871E24C2F6CA00A0525F /* CountryDetailsService.swift in Sources */,
 				45AE875124C417FA00A0525F /* HomeViewModel.swift in Sources */,
 				45AE874824C37E0500A0525F /* Connectivity.swift in Sources */,
 				45AE871D24C2F6CA00A0525F /* HomeViewController.swift in Sources */,
