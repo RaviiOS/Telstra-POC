@@ -13,34 +13,16 @@ class HttpClientTests: XCTestCase {
     var sut: URLSession!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         sut = URLSession(configuration: .default)
 
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         sut = nil
         super.tearDown()
 
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-//    func test_get_request_withURL() {
-//        guard let url = URL(string: "https://mockurl") else {
-//            fatalError("URL can't be empty")
-//        }
-//        httpClient.get(url: url) { (success, response) in
-//            // Return data
-//        }
-//        // Assert
-//    }
-
     
     func testCountryDetailsAPI() {
         let urlString = APIManager.networkEnviroment.rawValue + EndPoints.fetchCountryDetails.rawValue
